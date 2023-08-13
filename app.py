@@ -22,7 +22,6 @@ def message_hello(message, say):
   say(f"Hey there <@{message['user']}>! , How are you doing today?")
 
 
-
 # Add functionality here
 # @app.event("app_home_opened") etc
 @app.event("app_home_opened")
@@ -53,7 +52,7 @@ def update_home_tab(client, event, logger):
             "type": "section",
             "text": {
               "type": "mrkdwn",
-              "text": "Hello there, this is Sparrow "
+              "text": "Hello there, this is Sparrow Bot. "
             }
           },
           {
