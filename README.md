@@ -1,4 +1,4 @@
-### sparrow-bot
+### Sparrow Bot
 
 Learning Resources
 - [Slack Bot Docs using Bolt in Python](https://slack.dev/bolt-python/tutorial/getting-started-http)
@@ -10,3 +10,6 @@ Additional Slack Resource
 - [Event Types](https://api.slack.com/events)
 - [Web API Methods](https://api.slack.com/methods)
 - [Block Kit Builder](https://app.slack.com/block-kit-builder/)
+
+Python learning resources
+- [Python and REST APIs](https://realpython.com/api-integration-in-python/#rest-and-python-consuming-apis)
