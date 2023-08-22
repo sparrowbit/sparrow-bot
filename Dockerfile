@@ -13,8 +13,8 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Set environment varaible for bot(Bot Token & Signing Secret)
-ENV SLACK_BOT_TOKEN 
-ENV SLACK_SIGNING_SECRET 
+#ENV SLACK_BOT_TOKEN ""
+#ENV SLACK_SIGNING_SECRET "" 
 
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
