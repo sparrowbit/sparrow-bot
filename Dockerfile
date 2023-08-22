@@ -12,6 +12,10 @@ ENV PYTHONUNBUFFERED=1
 # Set the working directory in the container
 WORKDIR /app
 
+# Set environment varaible for bot(Bot Token & Signing Secret)
+ENV SLACK_BOT_TOKEN xoxb-5725332650038-5736554552740-AWTUEngqbWgJ0DeSaJDpbYzr
+ENV SLACK_SIGNING_SECRET e1e19097711cc95217fbdbfbe63d078d
+
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
 ARG UID=10001
@@ -43,7 +47,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 USER appuser
 
 # first copy the the environment file
-COPY .env .
+#COPY .env .
 
 # Copy the source code into the container into the working directory of container that we create earlier.
 COPY . .
@@ -52,4 +56,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the application. In bash shell, first execute source .env to load all env variables and then run the application
-CMD ["/bin/bash", "-c", "source .env && python app.py"]
+CMD ["/bin/bash", "-c", "python app.py"]
