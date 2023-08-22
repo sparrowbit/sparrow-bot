@@ -2,12 +2,11 @@ import os
 # Use the package we installed
 from slack_bolt import App
 # import env keys
-from dotenv import load_dotenv
-from slack_bolt.adapter.socket_mode import SocketModeHandler
+#from dotenv import load_dotenv
 
 
 # Load the variables from the .env file
-load_dotenv()
+#load_dotenv()
 
 # Initializes your app with your bot token and signing secret
 app = App(
