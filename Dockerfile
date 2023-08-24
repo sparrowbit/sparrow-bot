@@ -63,4 +63,4 @@ EXPOSE 80
 EXPOSE 3000
 
 # Run the application. In bash shell, first execute source .env to load all env variables and then run the application
-CMD ["/bin/bash", "-c", "service nginx start && python app.py"]
+CMD ["bash", "-c", "service nginx start && python app.py"]
