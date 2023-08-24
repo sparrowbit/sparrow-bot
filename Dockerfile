@@ -3,7 +3,7 @@ ARG PYTHON_VERSION=3.11.3
 FROM python:${PYTHON_VERSION}-slim as base
 
 # Install nginx & any other neccessary dependencies
-RUN apt-get update && apt_get install -y nginx
+RUN apt-get update && apt-get install -y nginx
 
 # Copy Nginx configuration
 COPY default.conf /etc/nginx/conf.d/default.conf
