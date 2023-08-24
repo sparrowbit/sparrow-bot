@@ -5,6 +5,9 @@ FROM python:${PYTHON_VERSION}-slim as base
 # Install nginx & any other neccessary dependencies
 RUN apt-get update && apt_get install -y nginx
 
+# Copy Nginx configuration
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 # Prevents Python from writing pyc files.
 ENV PYTHONDONTWRITEBYTECODE=1
 
@@ -54,21 +57,6 @@ USER appuser
 
 # Copy the source code into the container into the working directory of container that we create earlier.
 COPY . .
-
-# configre nginx as a reverse proxy
-# Configure Nginx as a reverse proxy
-RUN echo "server {
-    listen 80;
-    server_name localhost;
-
-    location / {
-        proxy_pass http://127.0.0.1:3000;
-        proxy_set_header Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
-    }
-}" > /etc/nginx/sites-available/default
 
 # Expose the port that the application listens on.
 EXPOSE 80
