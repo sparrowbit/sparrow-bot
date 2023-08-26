@@ -19,3 +19,7 @@ handler = SlackRequestHandler(app)
 @flask_app.route("/slack/events")
 def slack_events():
     return handler.handle(request)
+
+@flask_app.route("/hello")
+def hello():
+    return "Hello"
